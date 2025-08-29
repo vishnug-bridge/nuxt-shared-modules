@@ -1,6 +1,6 @@
 <template>
     <div class="p-4">
-        <h2>Dashboard Module</h2>
+        <h2>Dashboard Module version 2</h2>
         <div>NEW CHANGE {{name}}</div>
         <p>Base URL: {{ $dashboardConfig.baseURL }}</p>
         <p>Token: {{ $dashboardConfig.token }}</p>
