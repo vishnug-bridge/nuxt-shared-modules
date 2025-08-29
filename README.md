@@ -130,3 +130,4 @@ npm version patch
 # Publish
 npm publish --access public
 ```
+# nuxt-shared-modules
