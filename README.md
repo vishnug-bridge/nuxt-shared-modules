@@ -4,17 +4,23 @@
 
 ## 📦 Installation
 
-Install from npm:
+Install from GitHub:
 
 ```bash
-npm install nuxt-shared-modules
+npm install git+ssh://git@github.com:your-org/nuxt-shared-modules.git
+```
+
+Or (if public):
+
+```bash
+npm install https://github.com/your-org/nuxt-shared-modules.git
 ```
 
 ---
 
 ## 🚀 Usage
 
-In your **Nuxt 2 parent project**, add the shared module as you would any other Nuxt module.
+In your **Nuxt 2 parent project**, add the shared module like this:
 
 ### Example: Importing Dashboard module
 
@@ -33,7 +39,7 @@ export default {
 
 Now you can use the shared **Dashboard** components in your pages:
 
-```vue / nuxt
+```vue
 <template>
   <div>
     <DashboardHome name="hello" />
@@ -54,7 +60,6 @@ export default {
     }]
   ],
 };
-
 ```
 
 ---
@@ -102,24 +107,54 @@ nuxt-shared-modules/
 
 ---
 
-## 🔧 Local Development
+## 🔧 Local Development (using npm link)
 
-While building your shared module, you can use `npm link` to test it locally:
+While building your shared module, you can use `npm link` for live development.
 
 ```bash
+# In shared module project
 cd nuxt-shared-modules
 npm link
 
-# In your parent Nuxt project
+# In parent Nuxt project
 cd ../your-parent-project
 npm link nuxt-shared-modules
 ```
 
-Now any changes you make in `nuxt-shared-modules` will instantly be available in your parent project without republishing.
+✅ Now, any changes you make inside `nuxt-shared-modules` will reflect instantly in the parent project without pushing to GitHub or reinstalling.
+
+To undo the link later:
+
+```bash
+cd ../your-parent-project
+npm unlink nuxt-shared-modules
+npm install
+```
 
 ---
 
-## 🛠 Publishing to npm
+## 🛠 Updating via GitHub
+
+If not using `npm link`, after making changes:
+
+```bash
+# In shared module repo
+cd nuxt-shared-modules
+git add .
+git commit -m "update: added new feature to dashboard"
+git push origin main
+```
+
+Then in your parent Nuxt project:
+
+```bash
+cd your-parent-project
+npm install git+ssh://git@github.com:your-org/nuxt-shared-modules.git
+```
+
+---
+
+## 🛠 Publishing to npm (optional)
 
 To publish a new version:
 
@@ -130,4 +165,3 @@ npm version patch
 # Publish
 npm publish --access public
 ```
-# nuxt-shared-modules

@@ -8,7 +8,8 @@
     "index.js"
   ],
   "peerDependencies": {
-    "nuxt": "^2.15.0"
+    "nuxt": "^2.15.0",
+    "@nuxtjs/vuetify": "^1.12.3"
   },
   "exports": {
     "./dashboard": "./dashboard/index.js",
