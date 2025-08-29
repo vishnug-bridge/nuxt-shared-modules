@@ -1,0 +1,17 @@
+{
+  "name": "nuxt-shared-modules",
+  "version": "1.0.3",
+  "main": "index.js",
+  "files": [
+    "dashboard",
+    "tasks",
+    "index.js"
+  ],
+  "peerDependencies": {
+    "nuxt": "^2.15.0"
+  },
+  "exports": {
+    "./dashboard": "./dashboard/index.js",
+    "./tasks": "./tasks/index.js"
+  }
+}
